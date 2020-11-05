@@ -93,4 +93,78 @@ class BlogController extends AbstractController
             'formArticle'=>$formArticle->createView()
         ]);
     }
+
+
+    /**
+     * @Route("/blog/update/{id}", name="article_update")
+     * @param ArticleRepository $articleRepository
+     * @param Request $request
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function articleUpdate(
+        ArticleRepository $articleRepository,
+        Request $request,
+        EntityManagerInterface $entityManager,
+        $id,
+        SluggerInterface $slugger) {
+
+        $article = $articleRepository->find($id);
+
+        $formArticle = $this->createForm(ArticleType::class, $article);
+        $formArticle->handleRequest($request);
+
+        if ($formArticle->isSubmitted() && $formArticle->isValid()) {
+
+            $picture = $formArticle->get('pic')->getData();
+
+
+            if ($picture) {
+
+                $originalFilename = pathinfo($picture->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename. '-'.uniqid().'.'.$picture->guessExtension();
+
+                $picture->move(
+                    $this->getParameter('pictures_directory'),
+                    $newFilename
+                );
+
+                $article->setPic($newFilename);
+            }
+
+
+            $entityManager->persist($article);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('article', ['id'=>$article->getId()]);
+        }
+
+        return $this->render('article/article_update.html.twig', [
+            'formArticle'=>$formArticle->createView(),
+            'article'=>$article
+        ]);
+    }
+
+    /**
+     * @Route("/article/delete/{id}", name="article_delete")
+     * @param ArticleRepository $articleRepository
+     * @param $id
+     * @param EntityManagerInterface $entityManager
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function articleDelete(ArticleRepository $articleRepository,
+                                  $id,
+                                  EntityManagerInterface $entityManager) {
+
+        $article = $articleRepository->find($id);
+
+        $entityManager->remove($article);
+        $entityManager->flush();
+
+
+        return $this->redirectToRoute('blog');
+    }
+
+
 }

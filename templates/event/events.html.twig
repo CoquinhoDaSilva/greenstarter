@@ -17,6 +17,16 @@
                     <p class="text reveal">
                         {{ event.content }}
                     </p>
+                    {% if is_granted('ROLE_ADMIN') %}
+                    <div class="displayFlexCenter">
+                        <div class="displayFlexCenter">
+                            <a href="{{ path('event_update', {'id':event.id}) }}"><p class="btnarticle">Modifier l'évènement</p></a>
+                        </div>
+                        <div class="displayFlexCenter">
+                            <a href="{{ path('event_delete', {'id':event.id}) }}"><p class="btnarticle">Supprimer l'évènement</p></a>
+                        </div>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
         </div>

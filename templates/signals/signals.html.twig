@@ -11,12 +11,20 @@
                         <div class="zindex reveal reveal-right blogfloat bdesktop4 desktop6 tablet6 phone12">
                             <img class="img-fluid" alt="photo de l'article" title="photo de l'article" src="{{ asset('img/'~signal.pic) }}">
                         </div>
-                        <p class="reveal">Rédigé par Balcany pas en prison le 3 11 2020 }}</p>
+                        <p class="reveal">Rédigé par Balcany pas en prison le 3 11 2020 </p>
                         <p class="text reveal">
                             {{ signal.content }}
                         </p>
-                        <div class="displayFlexCenter">
-                        </div>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <div class="displayFlexCenter">
+                                <div class="displayFlexCenter">
+                                    <a href="{{ path('signal_update', {'id':signal.id}) }}"><p class="btnarticle">Modifier l'article</p></a>
+                                </div>
+                                <div class="displayFlexCenter">
+                                    <a href="{{ path('signal_delete', {'id':signal.id}) }}"><p class="btnarticle">Supprimer l'article</p></a>
+                                </div>
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>

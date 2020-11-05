@@ -26,7 +26,8 @@ class SignalType extends AbstractType
                 'label'=>'Texte'
             ])
             ->add('pic', FileType::class, [
-                'label'=>'Image'
+                'label'=>'Image',
+                'mapped'=>false
             ])
             ->add('picalt', TextType::class, [
                 'label'=>'Description de l\'image'

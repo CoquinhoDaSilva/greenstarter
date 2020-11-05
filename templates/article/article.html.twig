@@ -22,6 +22,16 @@
                 <p class="reveal text articletext">
                     {{ article.content }}
                 </p>
+                {% if is_granted('ROLE_ADMIN') %}
+                <div class="displayFlexCenter">
+                    <div class="displayFlexCenter">
+                        <a href="{{ path('article_update', {'id':article.id}) }}"><p class="btnarticle">Modifier l'article</p></a>
+                    </div>
+                    <div class="displayFlexCenter">
+                        <a href="{{ path('article_delete', {'id':article.id}) }}"><p class="btnarticle">Supprimer l'article</p></a>
+                    </div>
+                </div>
+                {% endif %}
             </div>
         </div>
     </section>

@@ -72,4 +72,75 @@ class EventController extends AbstractController
     }
 
 
+    /**
+     * @Route("/event/update/{id}", name="event_update")
+     * @param Request $request
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function eventUpdate(
+        EventRepository $eventRepository,
+        Request $request,
+        EntityManagerInterface $entityManager,
+        $id,
+        SluggerInterface $slugger) {
+
+        $event = $eventRepository->find($id);
+
+        $formEvent = $this->createForm(EventType::class, $event);
+        $formEvent->handleRequest($request);
+
+        if ($formEvent->isSubmitted() && $formEvent->isValid()) {
+
+            $picture = $formEvent->get('pic')->getData();
+
+
+            if ($picture) {
+
+                $originalFilename = pathinfo($picture->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename. '-'.uniqid().'.'.$picture->guessExtension();
+
+                $picture->move(
+                    $this->getParameter('pictures_directory'),
+                    $newFilename
+                );
+
+                $event->setPic($newFilename);
+            }
+
+
+            $entityManager->persist($event);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('events', ['id'=>$event->getId()]);
+        }
+
+        return $this->render('event/event_update.html.twig', [
+            'formEvent'=>$formEvent->createView(),
+            'event'=>$event
+        ]);
+    }
+
+    /**
+     * @Route("/event/delete/{id}", name="event_delete")
+     * @param ArticleRepository $articleRepository
+     * @param $id
+     * @param EntityManagerInterface $entityManager
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function articleDelete(EventRepository $eventRepository,
+                                  $id,
+                                  EntityManagerInterface $entityManager) {
+
+        $event = $eventRepository->find($id);
+
+        $entityManager->remove($event);
+        $entityManager->flush();
+
+
+        return $this->redirectToRoute('events');
+    }
+
+
 }

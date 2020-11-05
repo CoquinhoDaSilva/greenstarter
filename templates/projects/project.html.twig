@@ -48,7 +48,16 @@
                 <p class="reveal text">
                     {{ project.content }}
                 </p>
-
+                {% if is_granted('ROLE_ADMIN') %}
+                    <div class="displayFlexCenter">
+                        <div class="displayFlexCenter">
+                            <a href="{{ path('project_update', {'id':project.id}) }}"><p class="btnarticle">Modifier le projet</p></a>
+                        </div>
+                        <div class="displayFlexCenter">
+                            <a href="{{ path('project_delete', {'id':project.id}) }}"><p class="btnarticle">Supprimer le projet</p></a>
+                        </div>
+                    </div>
+                {% endif %}
             </div>
         </div>
     </section>

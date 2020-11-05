@@ -30,7 +30,8 @@ class EventType extends AbstractType
                 'label'=>'Texte'
             ])
             ->add('pic', FileType::class, [
-                'label'=>'image'
+                'label'=>'image',
+                'mapped'=>false
             ])
             ->add('picalt', TextType::class, [
                 'label'=>'Description de l\'image'

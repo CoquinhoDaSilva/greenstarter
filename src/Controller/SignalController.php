@@ -72,4 +72,75 @@ class SignalController extends AbstractController
         ]);
     }
 
+
+    /**
+     * @Route("/signal/update/{id}", name="signal_update")
+     * @param Request $request
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function signalUpdate(
+        SignalRepository $signalRepository,
+        Request $request,
+        EntityManagerInterface $entityManager,
+        $id,
+        SluggerInterface $slugger) {
+
+        $signal = $signalRepository->find($id);
+
+        $formSignal = $this->createForm(SignalType::class, $signal);
+        $formSignal->handleRequest($request);
+
+        if ($formSignal->isSubmitted() && $formSignal->isValid()) {
+
+            $picture = $formSignal->get('pic')->getData();
+
+
+            if ($picture) {
+
+                $originalFilename = pathinfo($picture->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename. '-'.uniqid().'.'.$picture->guessExtension();
+
+                $picture->move(
+                    $this->getParameter('pictures_directory'),
+                    $newFilename
+                );
+
+                $signal->setPic($newFilename);
+            }
+
+
+            $entityManager->persist($signal);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('signals');
+        }
+
+        return $this->render('signals/signal_update.html.twig', [
+            'formSignal'=>$formSignal->createView(),
+            'signal'=>$signal
+        ]);
+    }
+
+    /**
+     * @Route("/signal/delete/{id}", name="signal_delete")
+     * @param ArticleRepository $articleRepository
+     * @param $id
+     * @param EntityManagerInterface $entityManager
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function signaltDelete(SignalRepository $signalRepository,
+                                  $id,
+                                  EntityManagerInterface $entityManager) {
+
+        $signal = $signalRepository->find($id);
+
+        $entityManager->remove($signal);
+        $entityManager->flush();
+
+
+        return $this->redirectToRoute('signals');
+    }
+
 }
