@@ -1,0 +1,59 @@
+{% extends 'common/base.html.twig' %}
+
+
+
+{% block body %}
+
+
+    <main class="zindex projectmain bdesktop12 desktop12">
+        <img class="bdesktop12 desktop12 img-fluid" alt="titre du projet" title="titre du projet" src="{{ asset('img/'~project.pic) }}">
+        <div class="btndondiv">
+            <p class="btndon">Faire un don</p>
+        </div>
+        <div class="reveal btnresumediv">
+            <p>Créé par Balcany</p>
+            <p>Soutenu par Pierre Hermic</p>
+            <p>32 083 Contributeurs</p>
+            <p>23 498 487 € récoltés</p>
+        </div>
+    </main>
+
+
+    <section>
+        <div class="displayFlexCenter">
+            <div class="container-perso">
+                <div class="projectvideo displayFlexCenter">
+                    <video width="640"  height="360" src="http://www.youtube.com/demo/google_main.mp4"  controls autobuffer></video>
+                </div>
+                <h2 class="reveal textCenter title">{{ project.title }}</h2>
+            </div>
+        </div>
+        <div class="displayFlexCenter">
+            <div class="container-perso displayFlexBetween">
+                <div class="reveal">
+                    <p>Créé par Balcany</p>
+                    <p>Soutenu par Pierre Hermic</p>
+                </div>
+                <div class="reveal">
+                    <p>32 083 Contributeurs</p>
+                    <p>23 498 487 € récoltés</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="margintop displayFlexCenter">
+            <div class="container-perso">
+                <div class="projectfloat reveal" id="map">
+                </div>
+                <p class="reveal text">
+                    {{ project.content }}
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+{% endblock %}

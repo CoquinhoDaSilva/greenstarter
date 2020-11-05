@@ -1,0 +1,96 @@
+{% extends 'common/base.html.twig' %}
+
+{% block body %}
+
+    <section class="articlesection">
+        <div class="displayFlexCenter">
+            <div class="container-perso bdesktop10 desktop10 tablet10 phone12 displayFlexCenter">
+                <img class="img-fluid" alt="image de l'article" title="image de l'article" src="{{ asset('img/'~article.pic) }}">
+            </div>
+        </div>
+        <p>
+            {{ article.resume }}
+        </p>
+        <div class="displayFlexCenter">
+            <div class="container-perso">
+                <div class="displayFlexCenter">
+                    <h2 class="reveal title articletitle">T{{ article.title}}</h2>
+                </div>
+                <div class="reveal displayFlexCenter">
+                    <p>Rédigé par Wejdene le {{ article.date |date('d m Y') }}</p>
+                </div>
+                <p class="reveal text articletext">
+                    {{ article.content }}
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="textCenter title">Les projets populaires</h2>
+        <div class="displayFlexCenter">
+            <div class="container">
+                <div class="displayFlexBetween">
+                    <div class="reveal-left articleoverlay bdesktop6 desktop6 tablet6 phone12">
+                        <img class="img-fluid" alt="photo de l'article" title="photo de l'article" src="{{ asset('img/city4.jpg') }}">
+                        <div class="articleoverlaytext">
+                            <p>
+                                Titre de l'article
+                            </p>
+                            <p>
+                                Description de l'article
+                            </p>
+                        </div>
+                    </div>
+                    <div class="reveal-right articleoverlay bdesktop6 desktop6 tablet6 phone12">
+                        <img class="img-fluid" alt="photo de l'article" title="photo de l'article" src="{{ asset('img/city2.jpg') }}">
+                        <div class="articleoverlaytext">
+                            <p>
+                                Titre de l'article
+                            </p>
+                            <p>
+                                Description de l'article
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="displayFlexBetween">
+                    <div class="reveal-left articleoverlay bdesktop4 desktop4 tablet4 phone12">
+                        <img class="img-fluid" alt="photo de l'article" title="photo de l'article" src="{{ asset('img/city4.jpg') }}">
+                        <div class="articleoverlaytext">
+                            <p>
+                                Titre de l'article
+                            </p>
+                            <p>
+                                Description de l'article
+                            </p>
+                        </div>
+                    </div>
+                    <div class="reveal articleoverlay bdesktop4 desktop4 tablet4 phone12">
+                        <img class="img-fluid" alt="photo de l'article" title="photo de l'article" src="{{ asset('img/city.jpg') }}">
+                        <div class="articleoverlaytext">
+                            <p>
+                                Titre de l'article
+                            </p>
+                            <p>
+                                Description de l'article
+                            </p>
+                        </div>
+                    </div>
+                    <div class="reveal-right articleoverlay bdesktop4 desktop4 tablet4 phone12">
+                        <img class="img-fluid" alt="photo de l'article" title="photo de l'article" src="{{ asset('img/city3.jpg') }}">
+                        <div class="articleoverlaytext">
+                            <p>
+                                Titre de l'article
+                            </p>
+                            <p>
+                                Description de l'article
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

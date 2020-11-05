@@ -1,0 +1,12 @@
+.greennav {
+    background-color: #73B74A;
+}
+
+.dropdown-menu {
+    background-color: #73B74A!important;
+}
+
+.navbar-nav {
+    width: 100%!important;
+    justify-content: space-evenly;
+}

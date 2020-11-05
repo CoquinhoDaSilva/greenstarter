@@ -1,0 +1,26 @@
+{% extends 'common/base.html.twig' %}
+
+
+{% block body %}
+    {% for signal in signals %}
+        <section class="blogsection">
+            <div class="displayFlexCenter">
+                <div class="container-perso">
+                    <h2 class="reveal title">{{ signal.title }}</h2>
+                    <div class="reveal-left">
+                        <div class="zindex reveal reveal-right blogfloat bdesktop4 desktop6 tablet6 phone12">
+                            <img class="img-fluid" alt="photo de l'article" title="photo de l'article" src="{{ asset('img/'~signal.pic) }}">
+                        </div>
+                        <p class="reveal">Rédigé par Balcany pas en prison le 3 11 2020 }}</p>
+                        <p class="text reveal">
+                            {{ signal.content }}
+                        </p>
+                        <div class="displayFlexCenter">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    {% endfor %}
+{% endblock %}

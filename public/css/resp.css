@@ -1,0 +1,260 @@
+@media only screen and (min-width: 1701px) {
+    /* For desktop: */
+    .bdesktop1 {width: 8.33%;}
+    .bdesktop2 {width: 16.66%;}
+    .bdesktop3 {width: 25%;}
+    .bdesktop4 {width: 33.33%;}
+    .bdesktop5 {width: 41.66%;}
+    .bdesktop6 {width: 50%;}
+    .bdesktop7 {width: 58.33%;}
+    .bdesktop8 {width: 66.66%;}
+    .bdesktop9 {width: 75%;}
+    .bdesktop10 {width: 83.33%;}
+    .bdesktop11 {width: 91.66%;}
+    .bdesktop12 {width: 100%;}
+
+    .btnburger {
+        display: none;
+    }
+
+    .menuresp {
+        display: none!important;
+    }
+
+    .connexion {
+        display: none;
+    }
+
+    .menublog {
+        display: none;
+    }
+
+    .menuprojects {
+        display: none;
+    }
+
+    .menuevent {
+        display: none;
+    }
+
+
+    .menusignal{
+        display: none;
+    }
+
+}
+
+
+@media only screen and (min-width: 1280px) and (max-width: 1700px) {
+    /* For desktop: */
+    .desktop1 {width: 8.33%;}
+    .desktop2 {width: 16.66%;}
+    .desktop3 {width: 25%;}
+    .desktop4 {width: 33.33%;}
+    .desktop5 {width: 41.66%;}
+    .desktop6 {width: 50%;}
+    .desktop7 {width: 58.33%;}
+    .desktop8 {width: 66.66%;}
+    .desktop9 {width: 75%;}
+    .desktop10 {width: 83.33%;}
+    .desktop11 {width: 91.66%;}
+    .desktop12 {width: 100%;}
+
+    .btnburger {
+        display: none;
+    }
+
+    .menuresp {
+        display: none!important;
+    }
+
+    .connexion {
+        display: none;
+    }
+
+    .menublog {
+        display: none;
+    }
+
+    .menuprojects {
+        display: none;
+    }
+
+    .menuevent {
+        display: none;
+    }
+
+
+    .menusignal{
+        display: none;
+    }
+
+}
+
+@media only screen and (min-width: 750px) and (max-width: 1279px) {
+    /* For big tablets: */
+    .tablet1 {width: 8.33%;}
+    .tablet2 {width: 16.66%;}
+    .tablet3 {width: 25%;}
+    .tablet4 {width: 33.33%;}
+    .tablet5 {width: 41.66%;}
+    .tablet6 {width: 50%;}
+    .tablet7 {width: 58.33%;}
+    .tablet8 {width: 66.66%;}
+    .tablet9 {width: 75%;}
+    .tablet10 {width: 83.33%;}
+    .tablet11 {width: 91.66%;}
+    .tablet12 {width: 100%;}
+
+    .container-perso {
+        width: 95%;
+    }
+
+    .menuresp {
+        display: none!important;
+    }
+
+    .btnburger {
+        display: none;
+    }
+
+    .connexion {
+        display: none;
+    }
+
+    .menublog {
+        display: none;
+    }
+
+    .menuprojects {
+        display: none;
+    }
+
+    .menuevent {
+        display: none;
+    }
+
+
+    .menusignal{
+        display: none;
+    }
+
+    #map {
+        height: 30vh!important;
+    }
+
+
+}
+
+@media only screen and (min-width: 260px) and (max-width: 749px) {
+    /* For mobile: */
+    .phone1 {width: 8.33%;}
+    .phone2 {width: 16.66%;}
+    .phone3 {width: 25%;}
+    .phone4 {width: 33.33%;}
+    .phone5 {width: 41.66%;}
+    .phone6 {width: 50%;}
+    .phone7 {width: 58.33%;}
+    .phone8 {width: 66.66%;}
+    .phone9 {width: 75%;}
+    .phone10 {width: 83.33%;}
+    .phone11 {width: 91.66%;}
+    .phone12 {width: 100%;}
+
+    .navheader-ul li:not(:nth-child(6)) {
+        display: none!important;
+    }
+
+    .footerresp {
+        flex-wrap: wrap;
+    }
+
+    .footerinformations {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .logoaterlnresp {
+        justify-content: center;
+        display: flex;
+    }
+
+    .footersocialend {
+        display: flex;
+        justify-content: center!important;
+    }
+
+    .footersocialraw {
+        display: flex;
+        justify-content: center!important;
+    }
+
+    .navheaderfooter ul {
+        display: block!important;
+    }
+
+    .navheaderfooter ul li {
+        text-align: center;
+    }
+
+    h1, h2 {
+        text-align: center;
+    }
+
+    .whitesection,
+    .main {
+        margin: 10% 0!important;
+    }
+
+    .greensection {
+        padding: 10% 0!important;
+    }
+
+    .blogevent {
+        flex-wrap: wrap;
+    }
+
+    .connexion {
+        display: none;
+    }
+
+    .menublog {
+        display: none;
+    }
+
+    .menuprojects {
+        display: none;
+    }
+
+    .menuevent {
+        display: none;
+    }
+
+
+    .menusignal{
+        display: none;
+    }
+
+    #map {
+        width: 100%!important;
+    }
+}
+
+.dropdown-item:hover {
+    background-color: #4BA828!important;
+}
+
+
+
+
+@media (orientation: landscape) and (min-width: 750px) and (max-width: 979px) {
+
+}
+
+@media (orientation: landscape) and (min-width: 520px) and (max-width: 749px) {
+
+}
+
+@media (orientation: landscape) and (min-width: 260px) and (max-width: 519px) {
+
+}

@@ -1,0 +1,42 @@
+.projectsfloat {
+    float: right;
+    margin: 0 0 3% 3%;
+}
+
+footer {
+    clear: both;
+}
+
+.projectssection {
+    margin: 2% 0;
+}
+
+.projectssection:nth-child(2n+1) {
+    background-color: #4BA828;
+    color: white;
+    padding: 2% 0;
+}
+
+.projectssection:nth-child(2n+1) .projectsfloat {
+    float: left!important;
+    margin: 0 3% 3% 0;
+}
+
+.projectssection:nth-child(2n+1) .btnprojects {
+    background-color: black!important;
+    color: white!important;
+    border-radius: 5px;
+}
+
+.btnprojects {
+    background-color: #4BA828;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.projectssection:nth-child(2n+1) .btnprojects {
+    background-color: black!important;
+    color: white!important;
+    border-radius: 5px;
+}

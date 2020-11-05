@@ -1,0 +1,53 @@
+.textCenter {
+    text-align: center;
+}
+
+.displayFlexCenter {
+    display: flex;
+    justify-content: center;
+}
+
+.displayFlexBetween {
+    display: flex;
+    justify-content: space-between;
+}
+
+.displayFlexAround {
+    display: flex;
+    justify-content: space-around;
+}
+
+.container-perso {
+    width: 90%;
+}
+.textJustify {
+    text-align: justify;
+}
+
+.itemsCenter {
+    display: flex;
+    align-items: center;
+}
+
+.flexWrap {
+    flex-wrap: wrap;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+a {
+    color: white!important;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    text-transform: none;
+}
+
+.menufooter {
+    color: black!important;
+}
+

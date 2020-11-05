@@ -1,0 +1,40 @@
+.btndon {
+    background-color: #4BA828;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    position: absolute;
+    top: 50%;
+    right: 10%;
+}
+
+.projectmain {
+    position: relative;
+}
+
+.btnresumediv {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    padding: 3% 2%;
+}
+
+.projectvideo {
+    margin: 3% 0;
+}
+
+.projectfloat {
+    float: left;
+    margin: 0 3% 3% 0;
+}
+
+.projectfloatright {
+    float: right;
+    margin: 0 0 3% 3%;
+}
+
+.clear {
+    clear: both;
+}

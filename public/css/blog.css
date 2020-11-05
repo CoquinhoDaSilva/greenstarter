@@ -1,0 +1,42 @@
+.blogfloat {
+    float: right;
+    margin: 0 0 3% 3%;
+}
+
+footer {
+    clear: both;
+}
+
+.blogsection {
+    margin: 2% 0;
+}
+
+.blogsection:nth-child(2n+1) {
+    background-color: #4BA828;
+    color: white;
+    padding: 2% 0;
+}
+
+.blogsection:nth-child(2n+1) .blogfloat {
+    float: left!important;
+    margin: 0 3% 3% 0;
+}
+
+.blogsection:nth-child(2n+1) .btnarticle {
+    background-color: black!important;
+    color: white!important;
+    border-radius: 5px;
+}
+
+.btnarticle {
+    background-color: #4BA828;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.blogsection:nth-child(2n+1) .btnarticle {
+    background-color: black!important;
+    color: white!important;
+    border-radius: 5px;
+}
