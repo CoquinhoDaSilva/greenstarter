@@ -11,9 +11,9 @@
                         <div class="zindex reveal reveal-right blogfloat bdesktop4 desktop6 tablet6 phone12">
                             <img class="img-fluid" alt="photo de l'article" title="photo de l'article" src="{{ asset('img/'~signal.pic) }}">
                         </div>
-                        <p class="reveal">Rédigé par Balcany pas en prison le 3 11 2020 </p>
+                        <p class="reveal">Rédigé par {{ signal.user.email }}</p>
                         <p class="text reveal">
-                            {{ signal.content }}
+                            {{ signal.content |raw }}
                         </p>
                         {% if is_granted('ROLE_ADMIN') %}
                             <div class="displayFlexCenter">

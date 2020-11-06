@@ -30,7 +30,7 @@
         </div>
         <div class="greenstarter">
             <h1>
-                <a href="index.php">
+                <a href="{{ path('home') }}">
                     <img class="img-fluid" src="{{ asset('img/title.png') }}" alt="logo du site">
                 </a>
             </h1>
@@ -81,24 +81,18 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {% if app.user %}
+                        DECONNEXION
+                        {% else %}
                         CONNEXION
+                        {% endif %}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <div class="dropdown-tem">
-                            <div>
-                                <input type="text" placeholder="Adresse email">
-                            </div>
-                            <div>
-                                <input type="password" placeholder="Mot de passe">
-                            </div>
-                            <div class="displayFlexCenter">
-                                <input class="btnco" type="submit" value="Se connecter">
-                            </div>
-                            <div class="divuseroptions">
-                                <p class="useroptions"><a href="">Mot de passe oublié ?</a></p>
-                                <p class="useroptions"><a href="{{ path('signin') }}">Vous inscrire</a></p>
-                            </div>
-                        </div>
+                        {% if app.user %}
+                        <a class="dropdown-item" href="{{ path('app_logout') }}">Se déconnecter</a>
+                        {% else %}
+                            <a class="dropdown-item" href="{{ path('app_login') }}">Se connecter</a>
+                        {% endif %}
                     </div>
                 </li>
             </ul>

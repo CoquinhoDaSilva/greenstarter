@@ -22,3 +22,10 @@
 .articlesection {
     margin-top: 3%;
 }
+
+.articlescontent {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 9;
+    -webkit-box-orient: vertical;
+}

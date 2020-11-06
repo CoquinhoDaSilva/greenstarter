@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Project;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
@@ -28,7 +29,7 @@ class ProjectType extends AbstractType
             ->add('resume', TextType::class, [
                 'label'=>'Description'
             ])
-            ->add('content', TextType::class, [
+            ->add('content', CKEditorType::class, [
                 'label'=>'Texte'
             ])
             ->add('pic', FileType::class, [

@@ -44,7 +44,7 @@ class User implements UserInterface
     private $events;
 
     /**
-     * @ORM\OneToMany(targetEntity=Article::class, mappedBy="user")
+     * @ORM\OneToMany(targetEntity="App\Entity\Article", mappedBy="user")
      */
     private $articles;
 

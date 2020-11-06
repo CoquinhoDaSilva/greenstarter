@@ -72,27 +72,17 @@
     <div class="container-perso">
         <h2 class="reveal title popular-projects">Projets populaires</h2>
         <div class="popular-img">
-            <div class="overlayimg popular-margin reveal-left bdesktop3 desktop3 tablet12 phone12">
-                <img class="img-fluid" src="img/city.jpg" alt="" title="">
-                <div class="overlay">
-                    <p>Titre</p>
-                    <p>Description</p>
-                </div>
-            </div>
-            <div class="overlayimg popular-margin reveal bdesktop3 desktop3 tablet12 phone12">
-                <img class="img-fluid" src="img/city3.jpg" alt="" title="">
-                <div class="overlay">
-                    <p>Titre</p>
-                    <p>Description</p>
-                </div>
-            </div>
-            <div class="overlayimg popular-margin reveal-right bdesktop3 desktop3 tablet12 phone12">
-                <img class="img-fluid" src="img/city4.jpg" alt="" title="">
-                <div class="overlay">
-                    <p>Titre</p>
-                    <p>Description</p>
-                </div>
-            </div>
+            {% for project in lastProjects %}
+                <a class="bdesktop3 desktop3 tablet12 phone12" href="{{ path('project', {'id':project.id}) }}">
+                    <div class="overlayimg popular-margin reveal-left">
+                        <img class="img-fluid" src="{{ asset('img/'~project.pic) }}" alt="{{ project.picalt }}">
+                        <div class="overlay">
+                            <p>{{ project.title }}</p>
+                            <p>{{ project.resume }}</p>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
         </div>
     </div>
 </section>
@@ -102,64 +92,30 @@
         <h2 class="reveal title">Blog et évènements</h2>
         <div class="blogevent">
             <div class="blogimg bdesktop5 desktop5 tablet12 phone12">
-                <div class="overlayblogimg reveal-left bdesktop6 desktop5 tablet5 phone12">
-                    <img class="img-fluid" src="img/news.png" alt="" title="">
-                    <div class="overlayblog">
-                        <p>Titre</p>
-                        <p>Description</p>
-                    </div>
-                </div>
-                <div class="overlayblogimg reveal-right bdesktop6 desktop5 tablet5 phone12">
-                    <img class="img-fluid" src="img/news2.jpg" alt="" title="">
-                    <div class="overlayblog">
-                        <p>Titre</p>
-                        <p>Description</p>
-                    </div>
-                </div>
-                <div class="overlayblogimg reveal-left bdesktop6 desktop5 tablet5 phone12">
-                    <img class="img-fluid" src="img/news3.png" alt="" title="">
-                    <div class="overlayblog">
-                        <p>Titre</p>
-                        <p>Description</p>
-                    </div>
-                </div>
-                <div class="overlayblogimg reveal-right bdesktop6 desktop5 tablet5 phone12">
-                    <img class="img-fluid" src="img/news4.png" alt="" title="">
-                    <div class="overlayblog">
-                        <p>Titre</p>
-                        <p>Description</p>
-                    </div>
-                </div>
+                {% for article in lastArticles %}
+                    <a class="bdesktop5 desktop5 tablet12 phone12" href="{{ path('article', {'id':article.id}) }}">
+                        <div class="overlayblogimg reveal-left">
+                            <img class="img-fluid" src="{{ asset('img/'~article.pic) }}" alt="{{ article.picalt }}">
+                            <div class="overlayblog">
+                                <p>{{ article.title }}</p>
+                                <p>{{ article.resume }}</p>
+                            </div>
+                        </div>
+                    </a>
+                {% endfor %}
             </div>
             <div class="blogimg bdesktop5 desktop5 tablet12 phone12">
-                <div class="overlayblogimg reveal-left bdesktop6 desktop5 tablet5 phone12">
-                    <img class="img-fluid" src="img/event.png" alt="" title="">
-                    <div class="overlayblog">
-                        <p>Titre</p>
-                        <p>Description</p>
-                    </div>
-                </div>
-                <div class="overlayblogimg reveal-right bdesktop6 desktop5 tablet5 phone12">
-                    <img class="img-fluid" src="img/event2.png" alt="" title="">
-                    <div class="overlayblog">
-                        <p>Titre</p>
-                        <p>Description</p>
-                    </div>
-                </div>
-                <div class="overlayblogimg reveal-left bdesktop6 desktop5 tablet5 phone12">
-                    <img class="img-fluid" src="img/event3.png" alt="" title="">
-                    <div class="overlayblog">
-                        <p>Titre</p>
-                        <p>Description</p>
-                    </div>
-                </div>
-                <div class="overlayblogimg reveal-right bdesktop6 desktop5 tablet5 phone12">
-                    <img class="img-fluid" src="img/event4.png" alt="" title="">
-                    <div class="overlayblog">
-                        <p>Titre</p>
-                        <p>Description</p>
-                    </div>
-                </div>
+                {% for event in lastEvents %}
+                    <a class="bdesktop5 desktop5 tablet12 phone12" href="{{ path('events')}}">
+                        <div class="overlayblogimg reveal-left">
+                            <img class="img-fluid" src="{{ asset('img/'~event.pic) }}" alt="{{ event.picalt }}">
+                            <div class="overlayblog">
+                                <p>{{ event.title }}</p>
+                                <p>{{ event.resume }}</p>
+                            </div>
+                        </div>
+                    </a>
+                {% endfor %}
             </div>
         </div>
     </div>

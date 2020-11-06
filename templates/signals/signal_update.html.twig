@@ -3,6 +3,62 @@
 
 {% block body %}
 
-    {{ form(formSignal) }}
+    <section class="displayFlexCenter">
+        <div>
+            {{ form_start(formSignal) }}
+            <div>
+                <div class="displayFlexCenter">
+                    {{ form_label(formSignal.title) }}
+                </div>
+                <div class="displayFlexCenter">
+                    {{ form_widget(formSignal.title) }}
+                </div>
+            </div>
+            <div>
+                <div class="displayFlexCenter">
+                    {{ form_label(formSignal.resume) }}
+
+                </div>
+                <div class="displayFlexCenter">
+                    {{ form_widget(formSignal.resume) }}
+
+                </div>
+            </div>
+            <div>
+                <div class="displayFlexCenter">
+                    {{ form_label(formSignal.content) }}
+
+                </div>
+                <div class="displayFlexCenter">
+                    {{ form_widget(formSignal.content) }}
+
+                </div>
+            </div>
+            <div>
+                <div class="displayFlexCenter">
+                    {{ form_label(formSignal.pic) }}
+
+                </div>
+                <div class="displayFlexCenter">
+                    {{ form_widget(formSignal.pic) }}
+
+                </div>
+            </div>
+            <div>
+                <div class="displayFlexCenter">
+                    {{ form_label(formSignal.picalt) }}
+
+                </div>
+                <div class="displayFlexCenter">
+                    {{ form_widget(formSignal.picalt) }}
+
+                </div>
+            </div>
+            <div class="displayFlexCenter">
+                {{ form_row(formSignal.submit) }}
+            </div>
+            {{ form_end(formSignal) }}
+        </div>
+    </section>
 
 {% endblock %}

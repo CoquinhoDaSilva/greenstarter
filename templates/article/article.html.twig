@@ -8,19 +8,17 @@
                 <img class="img-fluid" alt="image de l'article" title="image de l'article" src="{{ asset('img/'~article.pic) }}">
             </div>
         </div>
-        <p>
-            {{ article.resume }}
-        </p>
+        <div class="textCenter">
+            <p>{{ article.resume }}</p>
+            <p>Rédigé par {{ article.user.email }} le {{ article.date|date('d m Y') }}</p>
+        </div>
         <div class="displayFlexCenter">
             <div class="container-perso">
                 <div class="displayFlexCenter">
-                    <h2 class="reveal title articletitle">T{{ article.title}}</h2>
-                </div>
-                <div class="reveal displayFlexCenter">
-                    <p>Rédigé par Wejdene le {{ article.date |date('d m Y') }}</p>
+                    <h2 class="reveal title articletitle">{{ article.title}}</h2>
                 </div>
                 <p class="reveal text articletext">
-                    {{ article.content }}
+                    {{ article.content |raw }}
                 </p>
                 {% if is_granted('ROLE_ADMIN') %}
                 <div class="displayFlexCenter">

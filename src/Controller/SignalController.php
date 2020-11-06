@@ -35,7 +35,10 @@ class SignalController extends AbstractController
      */
     public function signalInsert(EntityManagerInterface $entityManager,Security $security, SignalRepository $signalRepository, Request $request, SluggerInterface $slugger) {
 
+
+        $user = $security->getUser();
         $signal = new Signal;
+
 
         $formSignal = $this->createForm(SignalType::class, $signal);
 
@@ -44,6 +47,7 @@ class SignalController extends AbstractController
         if ($formSignal->isSubmitted() && $formSignal->isValid()) {
 
             $signal->setDate(new \DateTime('now'));
+            $signal->setUser($user);
             $picture = $formSignal->get('pic')->getData();
 
             if ($picture) {

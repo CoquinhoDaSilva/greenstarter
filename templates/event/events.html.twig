@@ -9,13 +9,14 @@
         <div class="displayFlexCenter">
             <div class="container-perso">
                 <h2 class="reveal title">{{ event.title}}</h2>
+                <h3>le {{ event.date|date('d m Y') }}</h3>
                 <div class="reveal-left">
                     <div class="zindex reveal reveal-right blogfloat bdesktop4 desktop6 tablet6 phone12">
                         <img class="img-fluid" alt="photo de l'article" title="photo de l'article" src="{{ asset('img/'~event.pic) }}">
                     </div>
-                    <p class="reveal">Rédigé par Balcany pas en prison le {{ event.date |date('d m Y') }}</p>
+                    <p class="reveal">Rédigé par {{ event.user.email }} le {{ event.date |date('d m Y') }}</p>
                     <p class="text reveal">
-                        {{ event.content }}
+                        {{ event.content |raw }}
                     </p>
                     {% if is_granted('ROLE_ADMIN') %}
                     <div class="displayFlexCenter">

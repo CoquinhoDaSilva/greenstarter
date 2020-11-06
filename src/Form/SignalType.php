@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Signal;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -22,7 +23,7 @@ class SignalType extends AbstractType
             ->add('resume', TextType::class, [
                 'label'=>'Description'
             ])
-            ->add('content', TextareaType::class, [
+            ->add('content', CKEditorType::class, [
                 'label'=>'Texte'
             ])
             ->add('pic', FileType::class, [

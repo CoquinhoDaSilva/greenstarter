@@ -13,10 +13,12 @@
                         <div class="zindex reveal reveal-right blogfloat bdesktop4 desktop6 tablet6 phone12">
                             <img class="img-fluid" alt="photo de l'article" title="photo de l'article" src="{{ asset('img/'~project.pic) }}">
                         </div>
-                        <p class="reveal">Rédigé par Balcany pas en prison le {{ project.date|date('d m Y') }}</p>
-                        <p class="text reveal">
-                            {{ project.content }}
-                        </p>
+                        <p class="reveal">Créé par {{ project.user.email }} le {{ project.date|date('d m Y') }}</p>
+                        <div class="articlescontent">
+                            <p class="text reveal">
+                                {{ project.content |raw }}
+                            </p>
+                        </div>
                         <div class="displayFlexCenter">
                             <a href="{{ path('project', {'id':project.id}) }}">
                                 <p class="reveal btnarticle">Voir le projet</p>

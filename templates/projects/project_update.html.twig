@@ -3,6 +3,80 @@
 
 {% block body %}
 
-    {{ form(formProject) }}
+    <section class="displayFlexCenter">
+        <div>
+            {{ form_start(formProject) }}
+            <div>
+                <div class="displayFlexCenter">
+                    {{ form_label(formProject.title) }}
+                </div>
+                <div class="displayFlexCenter">
+                    {{ form_widget(formProject.title) }}
+                </div>
+            </div>
+            <div>
+                <div class="displayFlexCenter">
+                    {{ form_label(formProject.amountneeded) }}
+                </div>
+                <div class="displayFlexCenter">
+                    {{ form_widget(formProject.amountneeded) }}
+                </div>
+            </div>
+            <div>
+                <div class="displayFlexCenter">
+                    {{ form_label(formProject.enddate) }}
+
+                </div>
+                <div class="displayFlexCenter">
+                    {{ form_widget(formProject.enddate) }}
+
+                </div>
+            </div>
+            <div>
+                <div class="displayFlexCenter">
+                    {{ form_label(formProject.resume) }}
+
+                </div>
+                <div class="displayFlexCenter">
+                    {{ form_widget(formProject.resume) }}
+
+                </div>
+            </div>
+            <div>
+                <div class="displayFlexCenter">
+                    {{ form_label(formProject.content) }}
+
+                </div>
+                <div class="displayFlexCenter">
+                    {{ form_widget(formProject.content) }}
+
+                </div>
+            </div>
+            <div>
+                <div class="displayFlexCenter">
+                    {{ form_label(formProject.pic) }}
+
+                </div>
+                <div class="displayFlexCenter">
+                    {{ form_widget(formProject.pic) }}
+
+                </div>
+            </div>
+            <div>
+                <div class="displayFlexCenter">
+                    {{ form_label(formProject.picalt) }}
+
+                </div>
+                <div class="displayFlexCenter">
+                    {{ form_widget(formProject.picalt) }}
+
+                </div>
+            </div>
+            <div class="displayFlexCenter">
+                {{ form_row(formProject.submit) }}
+            </div>
+            {{ form_end(formProject) }}
+        </div>
+    </section>
 
 {% endblock %}

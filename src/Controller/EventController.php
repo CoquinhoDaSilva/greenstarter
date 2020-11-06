@@ -35,6 +35,7 @@ class EventController extends AbstractController
      */
     public function eventInsert(EntityManagerInterface $entityManager,Security $security, EventRepository $eventRepository, Request $request, SluggerInterface $slugger) {
 
+        $user = $security->getUser();
         $event = new Event;
 
         $formEvent = $this->createForm(EventType::class, $event);
@@ -43,7 +44,9 @@ class EventController extends AbstractController
 
         if ($formEvent->isSubmitted() && $formEvent->isValid()) {
 
+            $event->setUser($user);
             $picture = $formEvent->get('pic')->getData();
+
 
             if ($picture) {
 

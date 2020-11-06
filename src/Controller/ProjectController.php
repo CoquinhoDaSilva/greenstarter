@@ -50,6 +50,8 @@ class ProjectController extends AbstractController
      */
     public function projectInsert(EntityManagerInterface $entityManager,Security $security, ProjectRepository $projectRepository, Request $request, SluggerInterface $slugger) {
 
+
+        $user = $security->getUser();
         $project = new Project;
 
         $formProject = $this->createForm(ProjectType::class, $project);
@@ -59,6 +61,7 @@ class ProjectController extends AbstractController
         if ($formProject->isSubmitted() && $formProject->isValid()) {
 
             $project->setDate(new \DateTime('now'));
+            $project->setUser($user);
             $picture = $formProject->get('pic')->getData();
 
             if ($picture) {

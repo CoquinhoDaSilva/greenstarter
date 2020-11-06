@@ -89,6 +89,10 @@
         display: none;
     }
 
+    .articlescontent {
+        -webkit-line-clamp: 13!important;
+    }
+
 }
 
 @media only screen and (min-width: 750px) and (max-width: 1279px) {
@@ -141,6 +145,10 @@
 
     #map {
         height: 30vh!important;
+    }
+
+    .articlescontent {
+        -webkit-line-clamp: 7!important;
     }
 
 

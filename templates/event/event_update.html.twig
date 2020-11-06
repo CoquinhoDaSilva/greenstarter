@@ -3,6 +3,72 @@
 
 {% block body %}
 
-{{ form(formEvent) }}
+    <section class="displayFlexCenter">
+        <div>
+            {{ form_start(formEvent) }}
+            <div>
+                <div class="displayFlexCenter">
+                    {{ form_label(formEvent.title) }}
+                </div>
+                <div class="displayFlexCenter">
+                    {{ form_widget(formEvent.title) }}
+                </div>
+            </div>
+            <div>
+                <div class="displayFlexCenter">
+                    {{ form_label(formEvent.date) }}
+
+                </div>
+                <div class="displayFlexCenter">
+                    {{ form_widget(formEvent.date) }}
+
+                </div>
+            </div>
+            <div>
+                <div class="displayFlexCenter">
+                    {{ form_label(formEvent.resume) }}
+
+                </div>
+                <div class="displayFlexCenter">
+                    {{ form_widget(formEvent.resume) }}
+
+                </div>
+            </div>
+            <div>
+                <div class="displayFlexCenter">
+                    {{ form_label(formEvent.content) }}
+
+                </div>
+                <div class="displayFlexCenter">
+                    {{ form_widget(formEvent.content) }}
+
+                </div>
+            </div>
+            <div>
+                <div class="displayFlexCenter">
+                    {{ form_label(formEvent.pic) }}
+
+                </div>
+                <div class="displayFlexCenter">
+                    {{ form_widget(formEvent.pic) }}
+
+                </div>
+            </div>
+            <div>
+                <div class="displayFlexCenter">
+                    {{ form_label(formEvent.picalt) }}
+
+                </div>
+                <div class="displayFlexCenter">
+                    {{ form_widget(formEvent.picalt) }}
+
+                </div>
+            </div>
+            <div class="displayFlexCenter">
+                {{ form_row(formEvent.submit) }}
+            </div>
+            {{ form_end(formEvent) }}
+        </div>
+    </section>
 
 {% endblock %}

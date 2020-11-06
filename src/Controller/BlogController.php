@@ -49,8 +49,9 @@ class BlogController extends AbstractController
     /**
      * @Route ("/blog/insert", name="article_insert")
      */
-    public function articleInsert(EntityManagerInterface $entityManager,Security $security, ArticleRepository $articleRepository, Request $request, SluggerInterface $slugger) {
+    public function articleInsert(Security $security, EntityManagerInterface $entityManager, ArticleRepository $articleRepository, Request $request, SluggerInterface $slugger) {
 
+        $user = $security->getUser();
         $article = new Article;
 
         $formArticle = $this->createForm(ArticleType::class, $article);
@@ -60,6 +61,7 @@ class BlogController extends AbstractController
         if ($formArticle->isSubmitted() && $formArticle->isValid()) {
 
             $article->setDate(new \DateTime('now'));
+            $article->setUser($user);
             $picture = $formArticle->get('pic')->getData();
 
             if ($picture) {

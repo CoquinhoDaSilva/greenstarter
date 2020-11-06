@@ -2,7 +2,63 @@
 
 {% block body %}
 
-    {{ form(formArticle) }}
+    <section class="displayFlexCenter">
+        <div>
+            {{ form_start(formArticle) }}
+            <div>
+                <div class="displayFlexCenter">
+                    {{ form_label(formArticle.title) }}
+                </div>
+                <div class="displayFlexCenter">
+                    {{ form_widget(formArticle.title) }}
+                </div>
+            </div>
+            <div>
+                <div class="displayFlexCenter">
+                    {{ form_label(formArticle.resume) }}
+
+                </div>
+                <div class="displayFlexCenter">
+                    {{ form_widget(formArticle.resume) }}
+
+                </div>
+            </div>
+            <div>
+                <div class="displayFlexCenter">
+                    {{ form_label(formArticle.content) }}
+
+                </div>
+                <div class="displayFlexCenter">
+                    {{ form_widget(formArticle.content) }}
+
+                </div>
+            </div>
+            <div>
+                <div class="displayFlexCenter">
+                    {{ form_label(formArticle.pic) }}
+
+                </div>
+                <div class="displayFlexCenter">
+                    {{ form_widget(formArticle.pic) }}
+
+                </div>
+            </div>
+            <div>
+                <div class="displayFlexCenter">
+                    {{ form_label(formArticle.picalt) }}
+
+                </div>
+                <div class="displayFlexCenter">
+                    {{ form_widget(formArticle.picalt) }}
+
+                </div>
+            </div>
+            <div class="displayFlexCenter">
+                {{ form_row(formArticle.submit) }}
+            </div>
+            {{ form_end(formArticle) }}
+        </div>
+    </section>
 
 
 {% endblock %}
